@@ -3358,7 +3358,7 @@ window.addEventListener("load", () => {
 </html>
       let chatSocket=null;
 function initChat(){
-  chatSocket=io();
+  chatSocket=io('https://game-51g3.onrender.com');
   let nickname=localStorage.getItem('tlh_nickname');
   if(!nickname){
     nickname=prompt('ПОЗЫВНОЙ (ник в эфире):','Сталкер'+Math.floor(Math.random()*999));
