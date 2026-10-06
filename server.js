@@ -4,7 +4,8 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const httpServer = createServer((req, res) => {
-  const filePath = path.join(__dirname, 'index.html');
+  let filePath = path.join(__dirname, 'index.html');
+if (!fs.existsSync(filePath)) filePath = path.join(__dirname, 'Index.html');
   fs.readFile(filePath, (err, data) => {
     if (err) {
       res.writeHead(500, { 'Content-Type': 'text/plain; charset=utf-8' });
